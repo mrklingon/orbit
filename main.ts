@@ -2,6 +2,8 @@ input.onButtonPressed(Button.A, function () {
     Falcon.move(1)
     Falcon.ifOnEdgeBounce()
     if (Falcon.get(LedSpriteProperty.X) == 4 && Falcon.get(LedSpriteProperty.Y) == 0) {
+        basic.showString("You made it!!!")
+        game.addScore(1000)
         game.setLife(0)
     }
     Start = 1
@@ -20,6 +22,13 @@ let Falcon: game.LedSprite = null
 Falcon = game.createSprite(0, 4)
 game.setLife(5)
 let Tscore = 0
+images.createBigImage(`
+    . # # . . . . . . .
+    . . # # . . . . . .
+    . # # # # . . . . .
+    . # # # # . . . . .
+    . . # # . . . . . .
+    `).scrollImage(1, 200)
 Start = 0
 basic.forever(function () {
     Sun = game.createSprite(1, 1)
