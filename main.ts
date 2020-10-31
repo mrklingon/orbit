@@ -4,7 +4,8 @@ input.onButtonPressed(Button.A, function () {
     if (Falcon.get(LedSpriteProperty.X) == 4 && Falcon.get(LedSpriteProperty.Y) == 0) {
         basic.showString("Winner!")
         game.addScore(1000)
-        game.setLife(0)
+        Falcon.delete()
+        Falcon = game.createSprite(0, 4)
     }
     Start = 1
 })
