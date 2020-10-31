@@ -4,6 +4,7 @@ input.onButtonPressed(Button.A, function () {
     if (Falcon.get(LedSpriteProperty.X) == 4 && Falcon.get(LedSpriteProperty.Y) == 0) {
         game.setLife(0)
     }
+    Start = 1
 })
 input.onButtonPressed(Button.B, function () {
     Falcon.turn(Direction.Left, 45)
@@ -14,10 +15,12 @@ let Speed_2 = 0
 let Speed = 0
 let Ship: game.LedSprite = null
 let Sun: game.LedSprite = null
+let Start = 0
 let Falcon: game.LedSprite = null
 Falcon = game.createSprite(0, 4)
 game.setLife(5)
 let Tscore = 0
+Start = 0
 basic.forever(function () {
     Sun = game.createSprite(1, 1)
     Ship = game.createSprite(2, 0)
@@ -37,7 +40,7 @@ basic.forever(function () {
         Ship2.turn(Direction.Right, 45)
         Ship2.move(1)
         basic.pause(Speed_2)
-        Tscore += 1
+        Tscore += 1 * Start
         if (Ship2.isTouching(Falcon) || Ship.isTouching(Falcon)) {
             game.removeLife(1)
             game.addScore(Tscore)
