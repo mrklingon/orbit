@@ -2,12 +2,13 @@ input.onButtonPressed(Button.A, function () {
     Falcon.move(1)
     Falcon.ifOnEdgeBounce()
     if (Falcon.get(LedSpriteProperty.X) == G1 && Falcon.get(LedSpriteProperty.Y) == G2) {
-        basic.showString("Goal!")
+        basic.showIcon(IconNames.Cow)
+        basic.pause(500)
         game.addScore(1000)
         G1 = 0
         G2 = 4
+        Start = 1
     }
-    Start = 1
 })
 input.onButtonPressed(Button.B, function () {
     Falcon.turn(Direction.Left, 45)
