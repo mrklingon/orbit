@@ -5,10 +5,11 @@ input.onButtonPressed(Button.A, function () {
         basic.showIcon(IconNames.Cow)
         basic.pause(500)
         game.addScore(1000)
-        G1 = 0
-        G2 = 4
-        Start = 1
+        Tmp = G1
+        G1 = G2
+        G2 = Tmp
     }
+    Start = 1
 })
 input.onButtonPressed(Button.B, function () {
     Falcon.turn(Direction.Left, 45)
@@ -19,6 +20,7 @@ let Speed_2 = 0
 let Speed = 0
 let Ship: game.LedSprite = null
 let Sun: game.LedSprite = null
+let Tmp = 0
 let G2 = 0
 let G1 = 0
 let Start = 0
