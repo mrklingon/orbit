@@ -1,10 +1,11 @@
 input.onButtonPressed(Button.A, function () {
     Falcon.move(1)
     Falcon.ifOnEdgeBounce()
-    if (Falcon.get(LedSpriteProperty.X) == 4 && Falcon.get(LedSpriteProperty.Y) == 0) {
-        basic.showString("Winner!")
+    if (Falcon.get(LedSpriteProperty.X) == G1 && Falcon.get(LedSpriteProperty.Y) == G2) {
+        basic.showString("Goal!")
         game.addScore(1000)
-        game.gameOver()
+        G1 = 0
+        G2 = 4
     }
     Start = 1
 })
@@ -17,6 +18,8 @@ let Speed_2 = 0
 let Speed = 0
 let Ship: game.LedSprite = null
 let Sun: game.LedSprite = null
+let G2 = 0
+let G1 = 0
 let Start = 0
 let Falcon: game.LedSprite = null
 Falcon = game.createSprite(0, 4)
@@ -30,6 +33,8 @@ images.createBigImage(`
     . . # # . . . . . .
     `).scrollImage(1, 200)
 Start = 0
+G1 = 4
+G2 = 0
 basic.forever(function () {
     Sun = game.createSprite(1, 1)
     Ship = game.createSprite(2, 0)
