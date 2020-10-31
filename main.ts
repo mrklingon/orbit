@@ -2,7 +2,7 @@ input.onButtonPressed(Button.A, function () {
     Falcon.move(1)
     Falcon.ifOnEdgeBounce()
     if (Falcon.get(LedSpriteProperty.X) == 4 && Falcon.get(LedSpriteProperty.Y) == 0) {
-        basic.showString("You made it!!!")
+        basic.showString("Winner!")
         game.addScore(1000)
         game.setLife(0)
     }
